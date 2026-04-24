@@ -13,6 +13,9 @@ export default defineConfig({
     },
   },
   plugins: [react()],
+  build: {
+    target: "es2022",
+  },
   test: {
     globals: true,
     environment: "jsdom",
