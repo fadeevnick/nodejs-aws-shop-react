@@ -15,15 +15,6 @@ const queryClient = new QueryClient({
 });
 
 (async function main() {
-  if (import.meta.env.DEV) {
-    try {
-      const { worker } = await import("./mocks/browser");
-      await worker.start({ onUnhandledRequest: "bypass" });
-    } catch (e) {
-      console.error('[debug] worker init failed', e);
-    }
-  }
-
   const container = document.getElementById("app");
 
   const root = createRoot(container!);
